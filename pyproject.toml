@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "polybar_online"
+version = "1.0.0"
+description = "Script for Polybar that checks connection to the Internet"
+authors = ["Vitaliy Zaitsev <dev.zaitsev@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{ include = "polybar_online" }]
+repository = "https://github.com/Leetovskiy/polybar-online"
+keywords = ["polybar", "tuning"]
+classifiers = [
+    "Intended Audience :: Other Audience",
+    "Intended Audience :: System Administrators",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Desktop Environment :: Window Managers",
+    "Topic :: Internet",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+polybar-online = "polybar_online.main:main"
+
+[project.scripts]
+polybar-online = "polybar_online.main:main"
