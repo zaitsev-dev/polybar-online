@@ -4,6 +4,11 @@
 in a
 panel with the ability to send a notification when the connection is broken and restored.
 
+<div align="center">
+  <img src="example.png"
+     alt="The appearance of Polybar Online in a Nord-themed environment">
+</div>
+
 ## Why another one?
 
 I've been looking for a similar module for myself and even found a couple. But they didn't
