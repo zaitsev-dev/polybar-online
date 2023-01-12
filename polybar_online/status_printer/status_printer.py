@@ -30,8 +30,8 @@ class StatusPrinter:
         """
         self._online_output: str = online_str
         self._offline_output: str = offline_str
-        self._online_notification = online_notification
-        self._offline_notification = offline_notification
+        self._online_notification: str = online_notification
+        self._offline_notification: str = offline_notification
 
     def _print_status(self, status: bool, is_notify: bool) -> None:
         flush_print(self._online_output if status else self._offline_output)

@@ -23,8 +23,7 @@ the icons to be displayed. It's not necessary if you're going to use your own ic
 other fonts, though.
 
 You should also make sure that you have `libnotify` on your Linux system, because the
-script
-uses the `notify-send` command
+script uses the `notify-send` command
 
 ## Installing
 
