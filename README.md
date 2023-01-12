@@ -17,10 +17,14 @@ around in someone else's. (and others are not able to send notifications!!!)
 
 ## Requirements
 
-The script does not use any third-party libraries, but you will need to install some
-[Nerd fonts](https://github.com/ryanoasis/nerd-fonts) in order for the icons to be displayed.
+The script tested on Python 3.10 and does not use any third-party libraries, but you will
+need to install some [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) in order for
+the icons to be displayed. It's not necessary if you're going to use your own icons from
+other fonts, though.
 
-It's not necessary if you're going to use your own icons from other fonts, though.
+You should also make sure that you have `libnotify` on your Linux system, because the
+script
+uses the `notify-send` command
 
 ## Installing
 
@@ -31,12 +35,10 @@ cd ~/.config/polybar/
 git clone https://github.com/Leetovskiy/polybar-online 
 ```
 
-You can also install Polybar Online from PyPI using `pip`. In this case, you may want to
-run the script as a regular console program. To do this, make sure that the directory of
-installed pip packages is available in the `PATH` variable.
+You can also globally install Polybar Online from PyPI using `pip`.
 
 ```shell
-pip install polybar-online
+sudo pip install polybar-online
 ```
 
 ## Configuration
@@ -64,19 +66,23 @@ Use the command `polybar-online -h` to see the full list of available options.
 ## Using
 
 You need to put the script path in a special `custom/script` section of your Polybar
-configuration file. You also need the tail parameter set to true. And don't forget to add
-the new module to your panel's module list.
+configuration file. You also need the tail parameter set to true. Do not forget to add
+the new module to your panel's module list and set the Nerd font.
 
 Example:
 
 ```ini
 [bar/mybar]
 modules-right = online
+font-0 = "Ubuntu Nerd Font:size=12"
 
 [module/online]
 type = custom/script
 exec = python ~/.config/polybar/polybar-online/polybar_online/main.py --notify -ci 5
 tail = true
+
+# or like this, if you installed the script globally with pip
+exec = polybar-online --notify -ci 5
 ```
 
 ## License
@@ -87,8 +93,7 @@ according to the terms of the license.
 ## Contribution
 
 If you know how to improve this project or would like to contribute yourself, you are
-welcome. I'm open to suggestions on Telegram ([@leetovskiy](https:/t.me/leetovskiy)) and
-email ([dev.zaitsev@gmail.com](mailto:dev.zaitsev@gmail.com)), and I'll consider pull
+welcome. I'm open to suggestions, so you can create an issue, and I'll consider pull
 requests from you as well.
 
 ## Roadmap
