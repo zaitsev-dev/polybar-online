@@ -8,15 +8,8 @@ from socket import gaierror
 
 def check_internet_connection(host: str = "google.com") -> bool:
     """
-    The check_internet_connection function checks if the device is
-    connected to the internet. It does this by attempting to connect
-    to google.com and excepting connection errors
-
-    Args:
-        host: Specify the host to check
-
-    Returns:
-        A boolean value
+    The function checks if the device is connected to the internet. It does
+    this by attempting to connect to google.com and excepting connection errors
     """
     connection = client.HTTPConnection(host=host, timeout=5)
     try:

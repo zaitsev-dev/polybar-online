@@ -12,10 +12,7 @@ def notify(msg: str) -> None:
     the message to be sent.
 
     Args:
-        msg:str: Pass the message to be displayed
-
-    Returns:
-        None
+        msg: Pass the message to be displayed
     """
     command = ("notify-send", msg)
     subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)

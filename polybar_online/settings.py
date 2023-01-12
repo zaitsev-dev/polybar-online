@@ -7,10 +7,10 @@ from argparse import BooleanOptionalAction
 DEFAULT_ONLINE_ICON: str = "度"
 DEFAULT_OFFLINE_ICON: str = "ﴹ"
 
-ONLINE_MESSAGE = "Internet connection restored"
-OFFLINE_MESSAGE = "Internet connection is lost"
+ONLINE_MESSAGE: str = "Internet connection restored"
+OFFLINE_MESSAGE: str = "Internet connection is lost"
 
-ARGPARSE_DESCRIPTION = (
+ARGPARSE_DESCRIPTION: str = (
     "Module script for Polybar that checks connection to the Internet"
 )
 ARGPARSE_ARGUMENTS: tuple = (

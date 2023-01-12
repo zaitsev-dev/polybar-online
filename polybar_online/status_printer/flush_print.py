@@ -3,16 +3,14 @@
 # Contacts: <dev.zaitsev@gmail.com>
 
 
-def flush_print(*args, **kwargs):
+def flush_print(*args, **kwargs) -> None:
     """
-    The flush_print function prints to the console and forces all output to be written immediately.
-    This is helpful when running a script in the background, such as with .gitignore -i.
+    The flush_print function prints to the console and forces all output
+    to be written immediately. This is helpful when running a script in
+    the background.
 
     Args:
         *args: Pass a non-keyword, variable-length argument list
         **kwargs: Pass keyword, variable-length arguments to the function
-
-    Returns:
-        None
     """
     print(*args, **kwargs, flush=True)

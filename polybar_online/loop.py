@@ -2,7 +2,6 @@
 # Licensed under the Apache License, Version 2.0
 # Contacts: <dev.zaitsev@gmail.com>
 
-
 from time import sleep
 
 from .status_printer import StatusPrinter
@@ -16,18 +15,19 @@ def connection_loop(
     retry_interval: int,
 ) -> None:
     """
-    The connection_loop function is the main loop of the program. It checks if there is an internet connection,
-    and if not it prints a notification and waits for an internet connection to return. If there is an internet
-    connection, it prints a notification that says that you are online.
+    The connection_loop function is a loop that checks the internet
+    connection every check_interval seconds. If there is no internet
+    connection, it prints an offline status message to the console and waits
+    for retry_interval seconds before checking again. If there is an internet
+    connection, it prints an online status message to the console and then
+    goes back to sleep for check_interval seconds.
 
     Args:
-        printer: Print the status of the internet connection
-        is_notify: Determine whether to notify the user of a change in status
-        check_interval: Set the time interval between each check
-        retry_interval: Set the time interval between each check when the connection is down
-
-    Returns:
-        None
+        printer: Printer object that print the status of the internet connection
+        is_notify: Determine whether the program should notify the user about
+            online status
+        check_interval: Set the time interval in seconds between each check
+        retry_interval: Set the time interval in seconds between each retry
     """
     prev_status = None
     while True:
